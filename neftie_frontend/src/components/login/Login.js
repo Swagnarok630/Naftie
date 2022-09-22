@@ -162,7 +162,7 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Pathway to="signup">
+                  <Pathway to="/signup">
                     <Link variant="body2">
                       {"Don't have an account? Sign Up"}
                     </Link>
