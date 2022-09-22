@@ -45,6 +45,7 @@ io.on("connection", (socket) => {
 });
 
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "../neftie_frontend/build")));
 app.use(express.json());
 app.use(cors());
 //Problably causing the error
@@ -61,6 +62,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "../neftie_frontend/build/index.html"));
   });
 }
+
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
